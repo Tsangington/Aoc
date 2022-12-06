@@ -1,8 +1,13 @@
-import numpy as np
-
 def split_list(a_list):
     half = len(a_list)//2
     return a_list[:half], a_list[half:]
+
+def arraySplit(arr, numParts):
+    array_length = len(arr)
+    if array_length % numParts == 0:
+        return [arr[i:i+numParts] for i in range(0,array_length,numParts)]
+    else:
+        return "Invalid split array length."
 
 def part1():
     f = open("2022\Day 3\input.txt","r")
@@ -29,12 +34,14 @@ def part2():
     for line in f:
         line = line.strip("\n")
         elves.append(line)
-    elves = np.array_split(elves,len(elves)/3)
+    elves = arraySplit(elves, 3)
     for group in elves:
         item = ''.join(set(group[0]).intersection(set(group[1]),set(group[2])))
         if item.islower() == True:
             piorities+=(ord(item)-96)
         else:
             piorities+=(ord(item)-38)  
-    print(piorities)      
+    print(piorities)   
+
+part1()   
 part2()
