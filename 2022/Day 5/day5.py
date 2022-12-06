@@ -1,4 +1,3 @@
-
 def moveCrates9000(query): #query[0] = num, query[1] is from, query[2] is to
     for _ in range(query[0]):
         temp = crate[query[1]-1].pop()
@@ -49,4 +48,3 @@ def solve(part):
 
 solve(moveCrates9000)
 solve(moveCrates9001)
-
