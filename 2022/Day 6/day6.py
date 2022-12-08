@@ -5,7 +5,7 @@ def unique(code, length):
 def solve(line, type):
     for index in range(len(line)):
         if unique( line[ index: index+ type], type) == True:
-                return("The marker appeared by index: {characterNum}".format(characterNum = index+type))
+                return("The marker appeared by index: {charNum}".format(charNum = index+type))
 
 f = open("2022\Day 6\input.txt","r")
 line = f.readline()
